@@ -13,3 +13,11 @@
 .accomplishments {
 	font-size: .8em;
 }
+
+li:nth-child(1){
+	font-weight: bold;
+}
+
+ul:hover {
+	background-color: yellow;
+}
