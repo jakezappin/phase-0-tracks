@@ -6,8 +6,12 @@ article:last-child {
   border-bottom: 1px solid white;
 }
 
-header {
-  
+body {
+  background-color: grey;
+}
+
+h1 {
+  text-align: center;
 }
 
 footer {
@@ -15,6 +19,7 @@ footer {
 }
 
 .column-1 {
+  background-color: lightgrey;
   outline: 1px solid black;
   width: 46%;
   display: inline-block;
@@ -26,6 +31,7 @@ footer {
 }
 
 .column-2 {
+  background-color: lightgrey;
   outline: 1px solid black;
   width: 46%;
   display: inline-block;
