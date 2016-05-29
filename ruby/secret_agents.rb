@@ -61,3 +61,12 @@ def decrypt(str)
 	return str
 	
 end
+
+puts encrypt("Jake")
+puts decrypt("Kblf")
+
+decrypt(encrypt("swordfish"))
+
+#The code above is passing a method call into a method call.  So first encrypt runs and returns the encrypted
+#string of "swordfish".  The returned encrypted string is then passed to the decrypt method.  The decrypt
+#method is then run and returns "swordfish"
