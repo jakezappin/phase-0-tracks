@@ -1,0 +1,9 @@
+Release 0 - Elevator 
+
+1. Approach the elevator
+2. Hit the up or down button
+3. Enter the elevator
+4. Select the floor you would like to go to
+5. Stand still until the elevator reaches the desired floor
+6. Exit the elevator
+
