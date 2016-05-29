@@ -62,11 +62,38 @@ def decrypt(str)
 	
 end
 
-puts encrypt("Jake")
-puts decrypt("Kblf")
+#puts encrypt("Jake")
+#puts decrypt("Kblf")
 
-decrypt(encrypt("swordfish"))
+#decrypt(encrypt("swordfish"))
 
 #The code above is passing a method call into a method call.  So first encrypt runs and returns the encrypted
 #string of "swordfish".  The returned encrypted string is then passed to the decrypt method.  The decrypt
 #method is then run and returns "swordfish"
+
+
+## Release 5 - User interface
+
+## 1. Prompt the user whether they want to encrypt or decrypt the password.
+## 2. Store the user's selection in a variable
+## 3. Prompt the user for the password
+## 4. Store the password input in a variable.
+## 5. Run the encrypt or decrypt method based on the user's selection
+## 6. Return the output of the encrypt or decrypt method
+
+puts "Would you like to encrypt or decrypt the password.  Please type 'encrypt' or 'decrypt' to make a selection"
+operation = gets.chomp
+
+puts "Please enter the password"
+password = gets.chomp
+
+if(operation == "encrypt")
+	puts encrypt(password)
+elsif(operation == "decrypt")
+	puts decrypt(password)
+else
+	puts "ERROR"
+end
+
+
+
