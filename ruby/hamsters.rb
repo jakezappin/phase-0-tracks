@@ -23,3 +23,19 @@ age = gets.chomp
 if(age.length == 0)
 	age = nil
 end
+
+puts "The name of the hamster is: " + name + "."
+puts "The volume of the hamster is: " + volume.to_s + "."
+puts "The color of the hamster is:" + furColor + "."
+
+if(adoption == true)
+	puts "The hamster is a good candidate for adoption."
+else 
+	puts "The hamster is NOT a good candidate for adoption."
+end
+
+if(age == nil)
+	puts "The age of the hamster is unknown."
+else
+	puts "The hamster is " + age.to_s + " years old."
+end
