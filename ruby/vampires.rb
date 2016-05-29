@@ -5,6 +5,10 @@ puts "How old are you?"
 age = gets.chomp
 age = age.to_i
 
+puts "What year were you born?"
+birthYear = gets.chomp
+birthYear = birthYear.to_i
+
 puts "Our company cafeteria serves garlic bread.  Should we order some for you? (Y/N)"
 garlicBread = gets.chomp
 
