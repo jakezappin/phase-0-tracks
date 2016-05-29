@@ -104,4 +104,4 @@ while (iterator < numEmployees)
 	iterator = iterator + 1
 end
 
-puts "The program is over!"
+puts "Actually, nevermind!  What do these questions have to do with anything?  Let's all be friends"
