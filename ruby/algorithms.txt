@@ -7,3 +7,17 @@ Release 0 - Elevator
 5. Stand still until the elevator reaches the desired floor
 6. Exit the elevator
 
+Release 1 - Brush Teeth
+
+1. Approach the Sink
+2. Obtain toothbrush
+3. Obtain toothpaste
+4. Squeeze a drop of toothpaste onto toothbrush.
+5. Place head of the toothbrush in your mouth
+6. Move bristles along your teeth for approximately 5-6 minutes
+7. Remove toothbrush from mouth
+8. Spit out toothpaste
+9. Rinse mouth
+10. Rinse toothbrush
+11. Return toothbrush and toothpaste to storage
+12. Leave sink
