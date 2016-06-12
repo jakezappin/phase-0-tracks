@@ -49,7 +49,7 @@ class Golfer
 
 	def add_club(club)
 		if get_number_of_clubs >= 14
-			puts "You already have 14 clubs"
+			puts "The Golfer already has 14 clubs"
 		else
 			@clubs.push(club)
 		end
@@ -60,7 +60,7 @@ class Golfer
 	end
 
 	def print_clubs()
-		puts "You have the following clubs: "
+		puts "The Golfer has the following clubs: "
 		index = 0
 		while index < @clubs.length
 			puts @clubs[index]
@@ -73,7 +73,7 @@ class Golfer
 	end
 
 	def print_scores()
-		puts "You have the following scores: "
+		puts "The Golfer has the following scores: "
 		index = 0
 		while index < @scores.length
 			puts @scores[index]
@@ -92,165 +92,237 @@ class Golfer
 		end
 
 		result = sum / scores.length
-		puts "Your average score is:  " + result.to_s + "."
+		puts "The Golfer's average score is:  " + result.to_s + "."
 
 	end
+
+	def print_golfer()
+		puts "The Golfer's name is: " + @name + "."
+		puts "The Golfer's handicap is: " + @handicap.to_s + "."
+		print_clubs()
+		print_scores()
+	end
+
 
 end
 
 
 ##DRIVER PROGRAM
 
-puts "Please enter your name."
-golfername = gets.chomp
-
-puts "Please enter your handicap."
-golferhandicap = gets.chomp
 
 
-triggerClubs = false
-timesLoopedClubs = 0
-golfclubs = []
+#USER ENTER'S THE GOLFERS INFORMATION
+golfers = []
+triggerGolfers = false
 
-while (triggerClubs == false)
+while triggerGolfers == false
 
-	if (timesLoopedClubs == 0)
-		puts "Please enter the clubs in your golf bag one at a time.  Type 'done' when you are finished."
-		input = gets.chomp
-		timesLoopedClubs = timesLoopedClubs + 1
-	else
-		puts "Enter the next club or type 'done':"
-		input = gets.chomp
-	end
+	puts "Please enter the Golfer's name."
+	golfername = gets.chomp
 
-	if (input == "done")
-		triggerClubs = true
-	else
-		golfclubs.push(input)
-	end
-
-end
-
-timesLoopedScores = 0
-triggerScores = false
-golferscores= []
-
-while (triggerScores == false)
-
-	if (timesLoopedScores == 0)
-		puts "Please enter your scores.  Type 'done' when you are finished."
-		input = gets.chomp
-		timesLoopedScores = timesLoopedScores + 1
-	else
-		puts "Enter the next score or type 'done':"
-		input = gets.chomp
-	end
-
-	if (input == "done")
-		triggerScores = true
-	else
-		input = input.to_i
-		golferscores.push(input)
-	end
-
-end
-
-golfer = Golfer.new(golfername, golferhandicap, golfclubs, golferscores)
+	puts "Please enter the Golfer's handicap."
+	golferhandicap = gets.chomp
 
 
-triggerModify = false
+	triggerClubs = false
+	timesLoopedClubs = 0
+	golfclubs = []
 
-while (triggerModify == false)
+	while (triggerClubs == false)
 
-	puts "-------------------------------------------------------"
-	puts "Please enter a number corresponding to an action below."
-	puts "1. Check to see if a club is in the bag."
-	puts "2. Remove a club from the bag."
-	puts "3. Add a club to your bag."
-	puts "4. See your clubs."
-	puts "5. Get the number of clubs in your bag."
-	puts "6. Get your handicap."
-	puts "7. Change your handicap."
-	puts "8. See your scores."
-	puts "9. Add a score."
-	puts "10. See your average score."
-	puts "-------------------------------------------------------"
-	input = gets.chomp.to_i
+		if (timesLoopedClubs == 0)
+			puts "Please the clubs in the Golfer's golf bag one at a time.  Type 'done' when you are finished."
+			input = gets.chomp
+			timesLoopedClubs = timesLoopedClubs + 1
+		else
+			puts "Enter the next club or type 'done':"
+			input = gets.chomp
+		end
 
-	if input == 1
-
-		puts "Please enter the club."
-		club = gets.chomp
-		golfer.is_club_in_bag(club)
-
-	elsif input == 2
-
-		puts "Please enter the club.  You currently have the following clubs in you bag: "
-		golfer.print_clubs()
-		club = gets.chomp
-		golfer.remove_club(club)
-		golfer.print_clubs()
-
-	elsif input == 3
-
-		puts "Please enter the club."
-		club = gets.chomp
-		golfer.add_club(club)
-		golfer.print_clubs()
-
-	elsif input == 4
-
-		golfer.print_clubs()
-
-	elsif input == 5
-
-		puts "You have " + golfer.get_number_of_clubs().to_s + " clubs in your bag."
-
-	elsif input == 6
-
-		puts "Your handicap is " + golfer.handicap.to_s + " ."
-
-	elsif input == 7
-
-		puts "Please enter your new handicap."
-		handicap = gets.chomp.to_i
-		golfer.handicap = handicap
-	
-	elsif input == 8
-
-		golfer.print_scores()
-
-	elsif input == 9
-
-		puts "Please enter your new score."
-		score = gets.chomp.to_i
-		golfer.add_score(score)
-		golfer.print_scores()
-
-	elsif input == 10
-
-		golfer.print_average_score()
+		if (input == "done")
+			triggerClubs = true
+		else
+			golfclubs.push(input)
+		end
 
 	end
 
+	timesLoopedScores = 0
+	triggerScores = false
+	golferscores= []
+
+	while (triggerScores == false)
+
+		if (timesLoopedScores == 0)
+			puts "Please enter the Golfer's scores.  Type 'done' when you are finished."
+			input = gets.chomp
+			timesLoopedScores = timesLoopedScores + 1
+		else
+			puts "Enter the next score or type 'done':"
+			input = gets.chomp
+		end
+
+		if (input == "done")
+			triggerScores = true
+		else
+			input = input.to_i
+			golferscores.push(input)
+		end
+
+	end
+
+	golfer = Golfer.new(golfername, golferhandicap, golfclubs, golferscores)
+	golfers.push(golfer)
 
 	shouldExit = false
 
 	while (shouldExit == false)
-		puts "Type 'continue' to continue.  Type 'exit' or exit the program."
+
+		puts "Would you like to create another golfer? (Y/N)"
 		exit = gets.chomp
 
-		if(exit == "exit")
-			triggerModify = true
+		if(exit == "Y")
+			triggerGolfers = false
 			shouldExit = true
-		elsif (exit == "continue")
-			triggerModify = false
+		elsif (exit == "N")
+			triggerGolfers = true
 			shouldExit = true
 		else
 			puts "You entered invalid input.  Please try again."
 		end
 	end
 
+end
+
+
+##USER SELECTS A GOLFER TO MODIFY
+
+programExit = false
+
+while programExit == false
+
+	triggerSelectGolfer = false
+	while triggerSelectGolfer == false
+		puts "Please select one of the following golfers or type 'done' to exit:"
+
+		index = 0
+		while index < golfers.length
+			index = index + 1
+			puts index.to_s + ".  " + golfers[index-1].name
+		end
+
+		golferInput = gets.chomp
+
+		if(golferInput == "done")
+			programExit = true
+			break
+		else
+			golferInput = golferInput.to_i
+
+			if(golferInput > 0 && golferInput <= golfers.length)
+				triggerSelectGolfer = true
+			else
+				puts "Invalid selection"
+			end
+		end
+	end
+
+
+	triggerModify = false
+	while (triggerModify == false)
+
+		puts "You selected: " + golfers[golferInput-1].name
+		puts "-------------------------------------------------------"
+		puts "Please enter a number corresponding to an action below."
+		puts "1. Check to see if a club is in the bag."
+		puts "2. Remove a club from the bag."
+		puts "3. Add a club to the Golfer's bag."
+		puts "4. See the Golfer's clubs."
+		puts "5. Get the number of clubs in the Golfer's bag."
+		puts "6. Get the Golfer's handicap."
+		puts "7. Change the Golfer's handicap."
+		puts "8. See the Golfer's scores."
+		puts "9. Add a score."
+		puts "10. See the Golfer's average score."
+		puts "-------------------------------------------------------"
+		input = gets.chomp.to_i
+
+		if input == 1
+
+			puts "Please enter the club."
+			club = gets.chomp
+			golfers[golferInput-1].is_club_in_bag(club)
+
+		elsif input == 2
+
+			puts "Please enter the club.  You currently have the following clubs in you bag: "
+			golfer[sgolferInput-1].print_clubs()
+			club = gets.chomp
+			golfers[golferInput-1].remove_club(club)
+			golfers[golferInput-1].print_clubs()
+
+		elsif input == 3
+
+			puts "Please enter the club."
+			club = gets.chomp
+			golfers[golferInput-1].add_club(club)
+			golfers[golferInput-1].print_clubs()
+
+		elsif input == 4
+
+			golfers[golferInput-1].print_clubs()
+
+		elsif input == 5
+
+			puts "You have " + golfers[golferInput-1].get_number_of_clubs().to_s + " clubs in your bag."
+
+		elsif input == 6
+
+			puts "Your handicap is " + golfers[golferInput-1].handicap.to_s + " ."
+
+		elsif input == 7
+
+			puts "Please enter your new handicap."
+			handicap = gets.chomp.to_i
+			golfers[golferInput-1].handicap = handicap
+		
+		elsif input == 8
+
+			golfers[golferInput-1].print_scores()
+
+		elsif input == 9
+
+			puts "Please enter your new score."
+			score = gets.chomp.to_i
+			golfers[golferInput-1].add_score(score)
+			golfers[golferInput-1].print_scores()
+
+		elsif input == 10
+
+			golfers[golferInput-1].print_average_score()
+
+		end
+
+
+		shouldExit = false
+
+		while (shouldExit == false)
+			puts "Type 'continue' to continue with this golfer.  Type 'exit' to select another golfer."
+			exit = gets.chomp
+
+			if(exit == "exit")
+				triggerModify = true
+				shouldExit = true
+			elsif (exit == "continue")
+				triggerModify = false
+				shouldExit = true
+			else
+				puts "You entered invalid input.  Please try again."
+			end
+		end
+
+		golfers[golferInput-1].print_golfer()
+	end
 end
 
 
