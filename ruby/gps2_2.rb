@@ -52,6 +52,89 @@
 # steps: loop through and print out key value pairs
 # output: a hash table with all the key value pairs
 
+$groceryList = {}
+
+def create(items)
+
+	tempList = items.split(" ")
+
+	index = 0
+	while index < tempList.length
+
+		$groceryList[tempList[index]] = 1
+		index = index + 1
+
+	end
+
+	print()
+
+	return $groceryList
+
+end
+
+def add(item, quantity = 1)
+
+	if $groceryList.has_key?(item) == true
+		$groceryList[item] = $groceryList[item] + quantity
+	else
+		$groceryList[item] = quantity
+	end
+
+	print()
+
+	return $groceryList
+
+end
+
+def remove(item, quantity = 1)
+	
+	if $groceryList.has_key?(item) == true
+		if $groceryList[item] == 1
+			$groceryList.delete(item)
+		else
+			$groceryList[item] = $groceryList[item] - quantity
+		end
+	else
+		puts "That item isn't in the list!"
+	end
+
+	print()
+
+	return $groceryList
+
+end
+
+def update (item, quantity)
+	
+	if $groceryList.has_key?(item) == true
+		$groceryList[item] = quantity
+	else
+		puts "That item isn't in the list!"
+	end
+
+	print()
+
+	return $groceryList
+
+end
+
+def print()
+	p $groceryList
+end
+
+create("carrots apples cereal pizza")
+
+puts(add("cheese"))
+
+puts(remove("apples"))
+
+puts(update("carrots", 10))
+
+
+
+
+
+
 
 
 
