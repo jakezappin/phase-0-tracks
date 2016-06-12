@@ -31,12 +31,12 @@ class Santa
 		@gender = newGender
 	end
 
-	def get_age()
-		return @age
+	def age
+		@age
 	end
 
-	def get_ethnicity()
-		return @ethnicity
+	def ethnicity
+		@ethnicity
 	end
 
 end
