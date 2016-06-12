@@ -131,6 +131,23 @@ puts(remove("apples"))
 puts(update("carrots", 10))
 
 
+##REFLECTION
+
+#I learned that pseudocoding is trial and error.  My pair and I had different ideas about working through
+#the problems.  We were able to work out a solution through trial and error thinking.
+
+#Arrays would require a nested structure.  Hashed you just need one structure.
+
+#A method returns the value, here the hash table.
+
+#You can pass variables, strings, integers or any data structures into methods.  You can even pass a
+#method into a method.
+
+#By declaring the information as global or by passing the information as a parameter to the method.
+
+#I got a better idea of hashes.
+
+
 
 
 
