@@ -1,0 +1,72 @@
+1.  
+
+sqlite> SELECT * FROM phones
+   ...> ;
+1|Galaxy S7|Samsung|2
+2|Galaxy S7 Edge|Samsung|2
+3|iPhone 6S|Apple|1
+4|iPhone 6S Plus|Apple|1
+5|Lumia 950|Microsoft|3
+6|Lumia 950 XL|Microsoft|3
+7|G5|LG|2
+8|HTC 10|HTC|2
+9|Oneplus 3|Oneplus|2
+
+
+2.
+
+sqlite> UPDATE phones SET manufacturer="Nokia" WHERE name="Lumia 950";
+sqlite> UPDATE phones SET manufacturer="Nokia" WHERE name="Lumia 950 XL";
+sqlite> SELECT * FROM phones
+   ...> ;
+1|Galaxy S7|Samsung|2
+2|Galaxy S7 Edge|Samsung|2
+3|iPhone 6S|Apple|1
+4|iPhone 6S Plus|Apple|1
+5|Lumia 950|Nokia|3
+6|Lumia 950 XL|Nokia|3
+7|G5|LG|2
+8|HTC 10|HTC|2
+9|Oneplus 3|Oneplus|2
+sqlite> 
+
+3.
+
+sqlite> SELECT * FROM phones, os WHERE phones.operating_system = os.id;
+1|Galaxy S7|Samsung|2|2|Android
+2|Galaxy S7 Edge|Samsung|2|2|Android
+3|iPhone 6S|Apple|1|1|iOS
+4|iPhone 6S Plus|Apple|1|1|iOS
+5|Lumia 950|Nokia|3|3|Windows
+6|Lumia 950 XL|Nokia|3|3|Windows
+7|G5|LG|2|2|Android
+8|HTC 10|HTC|2|2|Android
+9|Oneplus 3|Oneplus|2|2|Android
+
+4.
+
+sqlite> SELECT phones.name, os.os_name FROM phones JOIN os ON phones.operating_system = os.id;
+Galaxy S7|Android
+Galaxy S7 Edge|Android
+iPhone 6S|iOS
+iPhone 6S Plus|iOS
+Lumia 950|Windows
+Lumia 950 XL|Windows
+G5|Android
+HTC 10|Android
+Oneplus 3|Android
+
+5.
+
+sqlite> DELETE FROM phones WHERE manufacturer="Nokia";
+sqlite> SELECT * FROM phones
+   ...> ;
+1|Galaxy S7|Samsung|2
+2|Galaxy S7 Edge|Samsung|2
+3|iPhone 6S|Apple|1
+4|iPhone 6S Plus|Apple|1
+7|G5|LG|2
+8|HTC 10|HTC|2
+9|Oneplus 3|Oneplus|2
+sqlite> 
+
