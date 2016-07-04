@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jake's Guessing Game</title>
+	<link rel="stylesheet" type="text/css" href="game.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script type="text/javascript" src="game.js"></script>
+</head>
+<body>
+
+	<header>
+
+		<img src="guessinggame.jpg">
+
+	</header>
+
+	<div class="directions">
+
+		<br>
+		<br>
+
+		<p>Please guess a number between 1 and 100.  You only have 5 guesses!</p>
+
+
+	</div>
+
+	<div class="inputbox">
+
+		<br>
+		<br>
+
+		<form>
+  			<input id="guess" type="text" placeholder="1-100"><br><br>
+  			<button id="submitbutton" type="button">Submit Your Guess</button>
+		</form>
+
+	</div>
+
+	<div class="gameButtons">
+
+		<br>
+
+		<button id="playagainbutton" type="button">Play Again!</button>
+		<button id="hintbutton" type="button">Hint!</button>
+
+		<br>
+
+	</div>
+
+	<div class="remainingGuesses">
+
+		<br>
+
+		<p id="hintdisplay"> </p>
+
+		<br>
+
+		<p id="info">Let's play!  You have 5 guesses remaining</p>
+
+	</div>
+
+
+
+</body>
+</html>
