@@ -44,3 +44,42 @@ get '/students/:id' do
   student = db.execute("SELECT * FROM students WHERE id=?", [params[:id]])[0]
   student.to_s
 end
+
+## Release 0
+## Add a /contact route
+
+get '/contact' do
+  "244 Madison Avenue <br> New York, NY 10001"
+end
+
+## Release 0
+## Add a /great_job route
+
+get '/great_job' do
+  name = params[:name]
+  if name
+    "Great Job, #{name}!"
+  else
+    "Great Job!"
+  end
+end
+
+get '/:value1/plus/:value2' do
+  value1 = params[:value1]
+  value1 = value1.to_i
+  value2 = params[:value2]
+  value2 = value2.to_i
+
+  result = value1 + value2
+
+  "The result is #{result}!"
+end
+
+
+######RELEASE 1#########
+
+#1.  Another web app package is Rails
+
+#2.  Other database options include Sequel, MySQL, PostgreSQL, etc.
+
+#3.  A web stack is a collection of software and packages used for web delevopment.  It includes the programming language, database software and web server.
